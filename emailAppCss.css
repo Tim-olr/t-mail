@@ -1,0 +1,435 @@
+    :root {
+      --bg: #dde8f3;
+      --menu-bg: rgba(255, 255, 255, 0.7);
+      --border: rgba(0, 0, 0, 0.06);
+      --accent: #2563eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 50%;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #282c34;
+      color: white;
+      cursor: none;
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .menu {
+      background-color: #202329;
+      padding: 1rem;
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .link-mail,
+    .link-school,
+    .link-work,
+    .link-trello,
+    .link-discord {
+      color: #282c34;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius);
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      overflow: visible;
+      transition: all var(--transition);
+    }
+
+    .link-mail { color: #720606; }
+    .link-school { color: #146605; }
+    .link-work { color: #857c4e; }
+    .link-trello { color: #4657c0; }
+    .link-discord { color: #7330c0; }
+
+    .link-mail:hover,
+    .link-mail.is-bubbled {
+      color: #cacaca;
+      background-color: rgba(114, 6, 6, 0.3);
+      box-shadow: 0 0 20px rgba(129, 7, 7, 0.6);
+    }
+
+    .link-school:hover,
+    .link-school.is-bubbled {
+      color: #cacaca;
+      background-color: rgba(20, 102, 5, 0.3);
+      box-shadow: 0 0 20px rgba(22, 114, 6, 0.6);
+    }
+
+    .link-work:hover,
+    .link-work.is-bubbled {
+      color: #cacaca;
+      background-color: rgba(133, 124, 78, 0.3);
+      box-shadow: 0 0 20px rgba(158, 148, 92, 0.6);
+    }
+
+    .link-trello:hover,
+    .link-trello.is-bubbled {
+      color: #cacaca;
+      background-color: rgba(70, 87, 192, 0.3);
+      box-shadow: 0 0 20px rgba(82, 104, 245, 0.6);
+    }
+
+    .link-discord:hover,
+    .link-discord.is-bubbled {
+      color: #cacaca;
+      background-color: rgba(115, 48, 192, 0.3);
+      box-shadow: 0 0 20px rgba(138, 35, 255, 0.6);
+    }
+
+    .link-icon {
+      font-family: "Material Symbols Rounded";
+      font-size: 26px;
+      flex-shrink: 0;
+      transition: transform var(--transition);
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcomeH2 {
+      font-family: monospace;
+      margin: 40px auto;
+      text-align: center;
+      max-width: 30ch;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 2s steps(30) infinite alternate-reverse;
+    }
+
+    @keyframes typing {
+      from { width: 0ch; }
+      to { width: 30ch; }
+    }
+
+    .content-container {
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+      justify-content: center;
+      width: 90%;
+      max-width: 1200px;
+      margin-top: 20px;
+    }
+
+    .emailFormDiv {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      flex-shrink: 0;
+    }
+
+    .form-control {
+      position: relative;
+      margin: 20px auto 40px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .form-control input {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px #fff solid;
+      display: block;
+      width: 100%;
+      padding: 15px 0;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .form-control input:focus,
+    .form-control input:valid {
+      outline: 0;
+      border-bottom-color: lightblue;
+    }
+
+    .form-control input:hover {
+      cursor: none;
+    }
+
+    .form-control label {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .form-control label span {
+      display: inline-block;
+      font-size: 18px;
+      min-width: 5px;
+      color: #fff;
+      transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .form-control input:focus+label span,
+    .form-control input:valid+label span {
+      color: lightblue;
+      transform: translateY(-30px);
+    }
+
+    input[type="submit"] {
+      background-color: #334875;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: none;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2a4591;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .wrapper {
+      flex-shrink: 0;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .wrapper input {
+      border-radius: 0.8rem;
+      background: #23272f;
+      width: 100%;
+      outline: none;
+      padding: 1rem;
+      border: 1px solid transparent;
+      color: white;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .wrapper input:hover {
+      cursor: none;
+    }
+
+    .wrapper input:focus {
+      border: 1px solid #7097ec;
+      box-shadow: 0px 0px 80px rgba(108, 177, 235, 0.5),
+                  0px 0px 80px rgba(87, 133, 233, 0.5);
+    }
+
+    .wrapper button {
+      width: 45%;
+      cursor: none;
+      position: relative;
+      padding: 10px 24px;
+      font-size: 18px;
+      color: #4e6dc2;
+      border: 2px solid #2a4591;
+      border-radius: 34px;
+      background-color: transparent;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+      overflow: hidden;
+    }
+
+    .wrapper button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      border-radius: inherit;
+      scale: 0;
+      z-index: -1;
+      background-color: #2a4591;
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .wrapper button:hover::before {
+      scale: 3;
+    }
+
+    .wrapper button:hover {
+      color: #000000;
+      scale: 1.1;
+      box-shadow: 0 0px 20px #6a91ff;
+    }
+
+    .wrapper img {
+      margin-top: 10px;
+      padding: 10px;
+      max-width: 150px;
+    }
+
+    [data-sticky] { 
+      position: relative;
+    }
+    
+    [data-sticky] [data-sticky-area] { 
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+    }
+
+    .bubble {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      mix-blend-mode: difference;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform;
+    }
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .menu {
+    gap: 10px;
+    padding: 0.75rem;
+  }
+
+  .link-mail,
+  .link-school,
+  .link-work,
+  .link-trello,
+  .link-discord {
+    width: 45px;
+    height: 45px;
+  }
+
+  .link-icon {
+    font-size: 22px;
+  }
+
+  .welcomeH2 {
+    font-size: 18px;
+    margin: 30px auto;
+  }
+
+  .form-control {
+    max-width: 250px;
+    margin: 20px auto 35px;
+  }
+
+  .form-control input,
+  .form-control label span {
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .welcomeH2 {
+    font-size: 22px;
+  }
+
+  .form-control {
+    max-width: 280px;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .welcomeH2 {
+    font-size: 24px;
+  }
+
+  .form-control {
+    max-width: 300px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .welcomeH2 {
+    font-size: 26px;
+    margin: 60px auto;
+  }
+
+  .form-control {
+    max-width: 320px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+  .menu {
+    gap: 8px;
+  }
+
+  .link-mail,
+  .link-school,
+  .link-work,
+  .link-trello,
+  .link-discord {
+    width: 40px;
+    height: 40px;
+  }
+
+  .link-icon {
+    font-size: 20px;
+  }
+
+  .welcomeH2 {
+    font-size: 16px;
+  }
+
+  .form-control {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
